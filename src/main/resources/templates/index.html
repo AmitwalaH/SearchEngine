@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Documentation Search</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        /* Inline CSS (optional if you prefer external style) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .search-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .search-box {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .result {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .result a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+        .result p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Coding Documentation Search</h1>
+        <form action="/" method="get">
+            <input type="text" name="query" placeholder="Search for coding docs..." class="search-box"
+                   th:value="${query}" autofocus />
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="results">
+            <h2 th:if="${#lists.isEmpty(results)}">No results found.</h2>
+            <div th:each="doc : ${results}" class="result">
+                <a th:href="${doc.url}" target="_blank" th:text="${doc.name}"></a>
+                <p th:text="${doc.description}"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

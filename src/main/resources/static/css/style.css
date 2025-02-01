@@ -1,0 +1,44 @@
+/* Basic styling for the search page */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-box {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.result {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.result a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+}
+
+.result p {
+    margin: 5px 0;
+    color: #555;
+}
